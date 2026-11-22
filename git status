@@ -1,0 +1,35 @@
+[33mcommit 0129056f69057c3e9894bd5f06fafb5f670c3698[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/logica-juego[m[33m, [m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 2438085 619b445
+Author: Matias Del Pozo <330613531+matiasedp-cmd@users.noreply.github.com>
+Date:   Sun Nov 22 08:35:04 2026 -0300
+
+    Merge pull request #2 from matiasedp-cmd/feature/movimiento-usuario
+    
+    feat: implementar funcion ingresar_movimiento y corregir formato de tablero
+
+[33mcommit 619b4454300f2f86c4e0e808f553af02414f0a40[m[33m ([m[1;31morigin/feature/movimiento-usuario[m[33m, [m[1;32mfeature/movimiento-usuario[m[33m)[m
+Author: Matias <330613531+matiasedp-cmd@users.noreply.github.com>
+Date:   Sun Nov 22 08:31:12 2026 -0300
+
+    feat: implementar funcion ingresar_movimiento y corregir formato de tablero
+
+[33mcommit 24380855a887df38b174131b1c17e0f242d040f2[m
+Merge: 18e9ce3 8910c5f
+Author: Matias Del Pozo <330613531+matiasedp-cmd@users.noreply.github.com>
+Date:   Sat Nov 21 17:12:09 2026 -0300
+
+    Merge pull request #1 from matiasedp-cmd/feature/tablero
+    
+    Se crea la matriz inicial 3x3 y la función mostrar_tablero
+
+[33mcommit 8910c5f0a44b896cbcb725f3bb21b49e4277ce71[m[33m ([m[1;31morigin/feature/tablero[m[33m)[m
+Author: Matias <330613531+matiasedp-cmd@users.noreply.github.com>
+Date:   Sat Nov 21 17:08:07 2026 -0300
+
+    feat: agregar estructura del tablero y funcion mostrar_tablero
+
+[33mcommit 18e9ce372f797120f1d13b74cd9cbb6aee2e34a6[m
+Author: Matias <330613531+matiasedp-cmd@users.noreply.github.com>
+Date:   Sat Nov 21 15:50:04 2026 -0300
+
+    chore: estructura inicial del proyecto
