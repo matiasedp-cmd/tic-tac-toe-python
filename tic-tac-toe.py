@@ -77,25 +77,42 @@ def dibujar_movimiento(tablero):
         tablero[fila][columna] = "X"
 
 
-# --- Bucle principal del juego ---
-print("Bienvenido a Tic-Tac-Toe. Elige una casilla libre (1-9) para jugar.\n")
-turno_usuario = True
+def jugar():
+    tablero = [[1, 2, 3], [4, "X", 6], [7, 8, 9]]
+    turno_usuario = True
 
-while len(listar_campos_libres(tablero)) > 0:
-    mostrar_tablero(tablero)
-    if turno_usuario:
-        ingresar_movimiento(tablero)
-        if victoria_para(tablero, "O"):
-            mostrar_tablero(tablero)
-            print("¡Has ganado!")
-            break
-    else:
-        dibujar_movimiento(tablero)
-        if victoria_para(tablero, "X"):
-            mostrar_tablero(tablero)
-            print("¡La máquina ha ganado!")
-            break
-    turno_usuario = not turno_usuario
-else:
+    while len(listar_campos_libres(tablero)) > 0:
+        mostrar_tablero(tablero)
+        if turno_usuario:
+            ingresar_movimiento(tablero)
+            if victoria_para(tablero, "O"):
+                mostrar_tablero(tablero)
+                print("¡Has ganado!")
+                return
+        else:
+            dibujar_movimiento(tablero)
+            if victoria_para(tablero, "X"):
+                mostrar_tablero(tablero)
+                print("¡La máquina ha ganado!")
+                return
+        turno_usuario = not turno_usuario
+
     mostrar_tablero(tablero)
     print("¡Empate!")
+
+
+# --- Ejecución principal ---
+print("Bienvenido a Tic-Tac-Toe. Elige una casilla libre (1-9) para jugar.\n")
+
+while True:
+    jugar()
+    while True:
+        opcion = input("\n¿Quieres jugar otra partida? (s/n): ").strip().lower()
+        if opcion in ["s", "si", "sí", "n", "no"]:
+            break
+        print("Respuesta inválida. Escribe 's' para sí o 'n' para no.")
+
+    if opcion in ["n", "no"]:
+        print("¡Gracias por jugar! Hasta la próxima.")
+        break
+    print("\n--- Nueva partida ---\n")
