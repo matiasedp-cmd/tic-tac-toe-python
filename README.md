@@ -20,12 +20,12 @@ No requiere instalación de dependencias externas, solo **Python 3.x**.
 1. Clona el repositorio:
    ```bash
    git clone https://github.com
-   cd tic-tac-toe
+   cd tic-tac-toe-python
    ```
 
 2. Ejecuta el juego:
    ```bash
-   python tu_archivo.py
+   python tic_tac_toe.py
    ```
 
 ---
