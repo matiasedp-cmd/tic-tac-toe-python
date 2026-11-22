@@ -1,3 +1,4 @@
+from random import randrange
 
 tablero = [
         [1, 2, 3],
@@ -36,4 +37,75 @@ def ingresar_movimiento(tablero):
             print("Error: Eso no es un número entero. Inténtalo de nuevo.")
 
 
+def listar_campos_libres(tablero):
+  libres = []
+  for fila in range(3):
+    for columna in range(3):
+      if tablero[fila][columna] not in ['X', 'O']:
+        libres.append((fila, columna))
+  return libres
+
+
+def victoria_para(tablero, signo):
+  for i in range(3):
+    # Revisa filas
+    if (
+        tablero[i][0] == signo
+        and tablero[i][1] == signo
+        and tablero[i][2] == signo
+    ):
+      return True
+    # Revisa columnas
+    if (
+        tablero[0][i] == signo
+        and tablero[1][i] == signo
+        and tablero[2][i] == signo
+    ):
+      return True
+  # Revisa diagonales
+  if (
+      tablero[0][0] == signo
+      and tablero[1][1] == signo
+      and tablero[2][2] == signo
+  ):
+    return True
+  if (
+      tablero[0][2] == signo
+      and tablero[1][1] == signo
+      and tablero[2][0] == signo
+  ):
+    return True
+  return False
+
+
+def dibujar_movimiento(tablero):
+  libres = listar_campos_libres(tablero)
+  cantidad = len(libres)
+  if cantidad > 0:
+    indice = randrange(cantidad)
+    fila, columna = libres[indice]
+    tablero[fila][columna] = 'X'
+
+
+# --- Bucle principal del juego ---
+turno_usuario = True
+
+while len(listar_campos_libres(tablero)) > 0:
+  mostrar_tablero(tablero)
+  if turno_usuario:
+    ingresar_movimiento(tablero)
+    if victoria_para(tablero, 'O'):
+      mostrar_tablero(tablero)
+      print('¡Has ganado!')
+      break
+  else:
+    dibujar_movimiento(tablero)
+    if victoria_para(tablero, 'X'):
+      mostrar_tablero(tablero)
+      print('¡La máquina ha ganado!')
+      break
+  turno_usuario = not turno_usuario
+else:
+  mostrar_tablero(tablero)
+  print('¡Empate!')
 
